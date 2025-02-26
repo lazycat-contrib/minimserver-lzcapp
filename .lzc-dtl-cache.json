@@ -1,0 +1,38 @@
+{
+  "name": "MinimServer",
+  "package": "cloud.lazycat.app.minimserver",
+  "description": "一个UPnP Audio Server",
+  "homepage": "https://minimserver.com/index.html",
+  "author": "minimserver",
+  "app_features": [
+    "background_task"
+  ],
+  "subdomain": "minimserver",
+  "version": "2.2.0",
+  "iconPath": "icon.png",
+  "composePath": "docker-compose.yml",
+  "unsupported_platforms": [
+    "ios",
+    "android"
+  ],
+  "lastRouteType": "from_compose",
+  "port_mappings": {
+    "minimserver_9790_9790": {
+      "use": false,
+      "type": "http",
+      "path": "/",
+      "targetPath": "/"
+    }
+  },
+  "image_minimworld_minimserver_latest": {
+    "originalImage": "minimworld/minimserver:latest",
+    "pushTarget": "lazycat",
+    "newImageName": "registry.lazycat.cloud/czyt/minimworld/minimserver:48de01ed32dbce65",
+    "timestamp": "2025-02-26T14:09:11.888Z"
+  },
+  "minimserver_volume_/Music_action": "emptyDir",
+  "minimserver_volume_/Music_location": "user_data",
+  "minimserver_volume_/Music_subdir": "Music",
+  "minimserver_volume_minimserver_data_/opt/minimserver_action": "emptyDir",
+  "minimserver_volume_/opt/minimserver_location": "app_data"
+}
