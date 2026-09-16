@@ -1,0 +1,17 @@
+package: cloud.lazycat.app.minimserver
+version: 2.2.0
+name: MinimServer
+description: "一个UPnP Audio Server"
+min_os_version: "1.5.0"
+homepage: https://minimserver.com/index.html
+author: minimserver
+unsupported_platforms:
+  - ios
+  - android
+locales:
+  zh:
+    description: "一个UPnP Audio Server"
+    name: MinimServer
+  en:
+    description: "A UPnP Audio Server"
+    name: MinimServer

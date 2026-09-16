@@ -1,0 +1,21 @@
+application:
+  subdomain: minimserver
+  background_task: true
+  multi_instance: true
+  ingress:
+    - protocol: tcp
+      port: 9791
+      service: minimserver
+  upstreams:
+    - location: /
+      backend: http://minimserver.cloud.lazycat.app.minimserver.lzcapp:9790/
+services:
+  minimserver:
+    # upstream: minimworld/minimserver:2.2
+    image: docker.1ms.run/minimworld/minimserver:2.2
+    environment:
+      - TZ=Asia/Beijing
+    network_mode: host
+    binds:
+      - /lzcapp/run/mnt/home/Music:/Music
+      - /lzcapp/var/data:/opt/minimserver/data
